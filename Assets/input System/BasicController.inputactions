@@ -1,0 +1,167 @@
+{
+    "name": "BasicController",
+    "maps": [
+        {
+            "name": "Navigation",
+            "id": "0b0163a5-4a07-4d84-899e-bccc1c2cc32c",
+            "actions": [
+                {
+                    "name": "Vertical",
+                    "type": "Value",
+                    "id": "5093c31d-d562-485c-868c-5fd62c0b92d8",
+                    "expectedControlType": "Axis",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
+                    "name": "Valid",
+                    "type": "Button",
+                    "id": "79b8ae52-5fa5-4950-ba07-73166a40aba5",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
+                    "name": "Cancel",
+                    "type": "Button",
+                    "id": "9e4a5a15-211b-4c7f-ad94-0a65e25e99c8",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
+                    "name": "CharacterSelect",
+                    "type": "Value",
+                    "id": "1930a7bf-cfa8-4d9d-b20f-a7214a3b1309",
+                    "expectedControlType": "Axis",
+                    "processors": "",
+                    "interactions": ""
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "keyboard",
+                    "id": "6f8a5d67-dcf2-4c0f-b2fd-6e2863905734",
+                    "path": "1DAxis",
+                    "interactions": "Press(behavior=1)",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Vertical",
+                    "isComposite": true,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "negative",
+                    "id": "d45a5ed5-bba0-405f-bf57-f9f14c5f18a9",
+                    "path": "<Keyboard>/downArrow",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Vertical",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "positive",
+                    "id": "11410a32-6a5a-4823-ba81-5f2848cc9477",
+                    "path": "<Keyboard>/upArrow",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Vertical",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "Dpad-Stadia",
+                    "id": "280d334e-f9ef-4f2f-ad99-f6a76bb657d3",
+                    "path": "1DAxis",
+                    "interactions": "Press(behavior=1)",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Vertical",
+                    "isComposite": true,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "negative",
+                    "id": "9d70d6fe-a65b-4fc5-8aca-6316581fb40e",
+                    "path": "<HID::Google LLC Stadia Controller rev. A>/hat/down",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Vertical",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "positive",
+                    "id": "1a53b8e1-5300-4d97-8c12-2e6f8c1031aa",
+                    "path": "<HID::Google LLC Stadia Controller rev. A>/hat/up",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Vertical",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "",
+                    "id": "bfb42735-333e-4dc9-8a1a-88bb2b2cd94a",
+                    "path": "<Keyboard>/space",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Valid",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "afd654ce-2291-49b9-b224-11ef168bb9d2",
+                    "path": "<Keyboard>/escape",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Cancel",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "keyboard",
+                    "id": "a9fdb764-de59-44b0-ba1c-b6b221979d76",
+                    "path": "1DAxis",
+                    "interactions": "Press(behavior=1)",
+                    "processors": "",
+                    "groups": "",
+                    "action": "CharacterSelect",
+                    "isComposite": true,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "negative",
+                    "id": "04a450f1-cf80-4e47-b2f3-0c7f8316bbd2",
+                    "path": "<Keyboard>/pageDown",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "CharacterSelect",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "positive",
+                    "id": "751fa894-866b-4f7a-8e3f-fd7e1aa66b98",
+                    "path": "<Keyboard>/pageUp",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "CharacterSelect",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}

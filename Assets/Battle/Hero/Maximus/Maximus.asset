@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 40d47c59338579c428cf691782456f20, type: 3}
+  m_Name: Maximus
+  m_EditorClassIdentifier: 
+  icon: {fileID: 21300000, guid: 9aa84a0bd0aa96246baf8eff84595204, type: 3}
+  speed: 1
+  maxLife: 1000
+  ability: []
+  stancesLoadout: []
+  characterPrefab: {fileID: 6741838433865085829, guid: 2a711c012aef2f4418b90b07195f0504,
+    type: 3}
