@@ -1,31 +1,31 @@
-﻿using System;
-using System.Collections;
+﻿using System.Collections;
 using DG.Tweening;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+
 public class EntityActivePoint : MonoBehaviour
 {
     public Entity Entity;
-    
+
     public Image ProActivePointUI;
     public TextMeshProUGUI ProActivePointText;
 
     private Tween proActivePointTween;
 
-    private void Awake()
-    {
-        proActivePointTween = ProActivePointUI.DOFillAmount(1, Entity.CurrentSpeed * Time.deltaTime).SetSpeedBased();
-    }
-
     public IEnumerator Run()
     {
-        proActivePointTween.SetLoops(GameManager.Instance.MaxProActivePoints - Entity.ProActivePoint).Play();
+        proActivePointTween = DOTween
+            .To(g => ProActivePointUI.fillAmount = g, 0, 1, Entity.CurrentSpeed / 100f).SetSpeedBased();
+        // proActivePointTween = ProActivePointUI.DOFillAmount(1, Entity.CurrentSpeed * Time.deltaTime).SetSpeedBased();
+        proActivePointTween.SetLoops(GameManager.Instance.MaxProActivePoints - Entity.ProActivePoint);
         proActivePointTween.OnStepComplete(() =>
         {
             Entity.ProActivePoint++;
             ProActivePointText.text = Entity.ProActivePoint.ToString();
         });
+        proActivePointTween.Play();
+
         yield return proActivePointTween.WaitForCompletion();
     }
 

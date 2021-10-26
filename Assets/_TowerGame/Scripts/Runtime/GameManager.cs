@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
@@ -13,6 +12,8 @@ public class GameManager : MonoBehaviourSingleton<GameManager>
 
     private IEnumerator Start()
     {
+        yield return new WaitForEndOfFrame();
+        
         Characters.ForEach(c => c.StartFight());
         Enemies.ForEach(e => e.StartFight());
 

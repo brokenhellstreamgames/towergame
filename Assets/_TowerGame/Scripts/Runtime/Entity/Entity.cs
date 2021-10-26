@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -31,28 +30,30 @@ public abstract class Entity : MonoBehaviour
 
     #region Current Statistics
 
-    public int CurrentHealPoint { get; protected set; }
+    public int CurrentHealPoint;// { get; protected set; }
 
 
-    public int CurrentPhysicalAttack { get; protected set; }
+    public int CurrentPhysicalAttack;// { get; protected set; }
 
 
-    public int CurrentMagicalAttack { get; protected set; }
+    public int CurrentMagicalAttack;// { get; protected set; }
 
 
-    public int CurrentPhysicalDefense { get; protected set; }
+    public int CurrentPhysicalDefense;// { get; protected set; }
 
 
-    public int CurrentMagicalDefense { get; protected set; }
+    public int CurrentMagicalDefense;// { get; protected set; }
 
 
-    public int CurrentSpeed { get; protected set; }
+    public int CurrentSpeed;// { get; protected set; }
 
     #endregion
 
     public int ProActivePoint;
 
     public EntityActivePoint ProActivePointBehaviour;
+
+    public TargetManager TargetManager;
 
     public BehaviorTree BehaviorTree;
     public Coroutine FightCoroutine;
@@ -77,9 +78,9 @@ public abstract class Entity : MonoBehaviour
 
     public void TakeDamage(Entity from, int damage, AbilityType type)
     {
-        Debug.Log($"{name} Receive damage from {from}");
-        int EntityDefense = type == AbilityType.Physic ? CurrentPhysicalDefense : CurrentMagicalDefense;
-        CurrentHealPoint = CurrentHealPoint - damage * (EntityDefense/10) < 0 ? 0 : CurrentHealPoint - damage * (EntityDefense/10);
+        //Debug.Log($"{name} Receive damage from {from}");
+        int entityDefense = type == AbilityType.Physic ? CurrentPhysicalDefense : CurrentMagicalDefense;
+        CurrentHealPoint = CurrentHealPoint - damage * (entityDefense/10) < 0 ? 0 : CurrentHealPoint - damage * (entityDefense/10);
         if (CurrentHealPoint == 0)
         {
             _alive = false;
@@ -89,9 +90,9 @@ public abstract class Entity : MonoBehaviour
 
     public void PerformAttack(Ability ability, Modifier modifier)
     {
-        Debug.Log($"{name} perform attack {ability.Name}");
-        List<Entity> entities = modifier.GetEntities(ability.NumberOfEntities);
-        ability.Run(entities);
+        //Debug.Log($"{name} perform attack {ability.Name}");
+        modifier.ComputeEntities(ability.NumberOfEntities);
+        ability.Run(modifier.GetEntities());
     }
 
     public void StartFight()
@@ -115,12 +116,15 @@ public abstract class Entity : MonoBehaviour
 
             while (ProActivePoint > 0)
             {
+                Debug.Log(gameObject.name);
                 BehaviorTreeItem behaviorTreeItem = BehaviorTree.GetTreeItem();
                 PerformAttack(behaviorTreeItem.Ability, behaviorTreeItem.Modifier);
                 ProActivePoint -= behaviorTreeItem.Ability.Cost;
                 ProActivePointBehaviour.SetPointText(ProActivePoint);
                 behaviorTreeItem.Disable();
+                TargetManager.Launch(behaviorTreeItem.Modifier.GetEntities());
                 yield return new WaitForSeconds(10 / (CurrentSpeed * Time.fixedDeltaTime));
+                TargetManager.Erase();
             }
 
             yield return new WaitForEndOfFrame();
