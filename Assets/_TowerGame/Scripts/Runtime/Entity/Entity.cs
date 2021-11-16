@@ -26,6 +26,9 @@ public abstract class Entity : MonoBehaviour
     [SerializeField]
     protected int _speed;
 
+    [SerializeField]
+    protected int _proActivePointMax;
+
     #endregion
 
     #region Current Statistics
@@ -110,7 +113,7 @@ public abstract class Entity : MonoBehaviour
     {
         while (true)
         {
-            if (ProActivePoint < GameManager.Instance.MaxProActivePoints)
+            if (ProActivePoint < _proActivePointMax)
             {
                 yield return ProActivePointBehaviour.Run();
             }
@@ -130,5 +133,10 @@ public abstract class Entity : MonoBehaviour
 
             yield return new WaitForEndOfFrame();
         }
+    }
+
+    public int GetProActiveMaxPoints()
+    {
+        return _proActivePointMax;
     }
 }

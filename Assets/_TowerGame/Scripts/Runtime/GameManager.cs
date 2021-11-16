@@ -7,9 +7,7 @@ public class GameManager : MonoBehaviourSingleton<GameManager>
 {
     public List<Character> Characters;
     public List<Enemy> Enemies;
-
-    public int MaxProActivePoints;
-
+    
     private IEnumerator Start()
     {
         yield return new WaitForEndOfFrame();
