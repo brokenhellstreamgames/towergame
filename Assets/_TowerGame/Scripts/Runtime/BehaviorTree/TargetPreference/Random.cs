@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-public class Random : Modifier
+public class Random : TargetPreference
 {
     public Random(Entity entity) : base(entity) { }
 

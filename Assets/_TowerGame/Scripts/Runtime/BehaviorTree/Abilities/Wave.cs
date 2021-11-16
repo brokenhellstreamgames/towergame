@@ -10,6 +10,7 @@ public class Wave : Ability
         NumberOfEntities = 3;
         Cost = 3;
         Power = 100;
+        TargetPreference = new HPGreatier(entity);
     }
 
     public override void Run(List<Entity> entity)

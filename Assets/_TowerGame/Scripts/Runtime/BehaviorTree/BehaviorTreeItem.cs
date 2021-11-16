@@ -20,21 +20,21 @@ public class BehaviorTreeItem
     {
         Condition = new FirstAttack(entity);
         Ability = new BaseAttack(entity);
-        Modifier = new Random(entity);
+        Modifier = new MagicalAttack(entity);
     }
 
     private void Init1(Entity entity)
     {
         Condition = new TwoOrMoreEntity(entity);
         Ability = new Wave(entity);
-        Modifier = new Random(entity);
+        Modifier = new PhysicalAttack(entity);
     }
 
     private void Init2(Entity entity)
     {
         Condition = new OneEntity(entity);
-        Ability = new BaseAttack(entity);
-        Modifier = new HPGreatier(entity);
+        Ability = new FireBall(entity);
+        Modifier = new PowerBoost(entity);
     }
 
     public void Enable()

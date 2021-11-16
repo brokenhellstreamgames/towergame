@@ -10,6 +10,7 @@ public class FireBall : Ability
         Cost = 2;
         Power = 150;
         NumberOfEntities = 1;
+        TargetPreference = new HPGreatier(entity);
     }
 
     public override void Run(List<Entity> entity)

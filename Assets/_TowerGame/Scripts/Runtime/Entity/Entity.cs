@@ -91,8 +91,9 @@ public abstract class Entity : MonoBehaviour
     public void PerformAttack(Ability ability, Modifier modifier)
     {
         //Debug.Log($"{name} perform attack {ability.Name}");
-        modifier.ComputeEntities(ability.NumberOfEntities);
-        ability.Run(modifier.GetEntities());
+        modifier.ModifyAbility(ability);
+        ability.TargetPreference.ComputeEntities(ability.NumberOfEntities);
+        ability.Run(ability.TargetPreference.GetEntities());
     }
 
     public void StartFight()
@@ -122,9 +123,9 @@ public abstract class Entity : MonoBehaviour
                 ProActivePoint -= behaviorTreeItem.Ability.Cost;
                 ProActivePointBehaviour.SetPointText(ProActivePoint);
                 behaviorTreeItem.Disable();
-                TargetManager.Launch(behaviorTreeItem.Modifier.GetEntities());
-                yield return new WaitForSeconds(10 / (CurrentSpeed * Time.fixedDeltaTime));
-                TargetManager.Erase();
+                //TargetManager.Launch(behaviorTreeItem.Modifier.GetEntities());
+                yield return new WaitForSeconds(10 / (CurrentSpeed * Time.deltaTime));
+                //TargetManager.Erase();
             }
 
             yield return new WaitForEndOfFrame();

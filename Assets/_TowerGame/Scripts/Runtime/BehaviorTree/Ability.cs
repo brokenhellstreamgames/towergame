@@ -15,6 +15,7 @@ public abstract class Ability
     public int Cost;
     public AbilityType Type;
     public int Power;
+    public TargetPreference TargetPreference;
 
     public Ability(Entity entity)
     {

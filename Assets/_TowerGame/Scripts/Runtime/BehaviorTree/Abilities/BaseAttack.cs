@@ -10,6 +10,7 @@ public class BaseAttack : Ability
         Cost = 1;
         Power = 50;
         NumberOfEntities = 1;
+        TargetPreference = new Random(entity);
     }
     
     public override void Run(List<Entity> entity)

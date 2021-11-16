@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 
-public class HPGreatier : Modifier
+public class HPGreatier : TargetPreference
 {
     public HPGreatier(Entity entity) : base(entity) { }
 
