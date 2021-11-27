@@ -17,7 +17,7 @@ public class EntityActivePoint : MonoBehaviour
     {
         proActivePointTween = DOTween
             .To(g => ProActivePointUI.fillAmount = g, 0, 1, Entity.CurrentSpeed / 100f).SetSpeedBased();
-        // proActivePointTween = ProActivePointUI.DOFillAmount(1, Entity.CurrentSpeed * Time.deltaTime).SetSpeedBased();
+        proActivePointTween = ProActivePointUI.DOFillAmount(1, Entity.CurrentSpeed * Time.deltaTime).SetSpeedBased();
         proActivePointTween.SetLoops(Entity.GetProActiveMaxPoints() - Entity.ProActivePoint);
         proActivePointTween.OnStepComplete(() =>
         {
