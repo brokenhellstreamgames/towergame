@@ -17,7 +17,14 @@ public class IgnitedTargets : TargetPreferenceV2
                     targetEntities.Add(entity);
                 }
             }
-            Targets = targetEntities.Random(numberOfEntities).ToList<Entity>();
+            if (targetEntities.Count - 1 >= numberOfEntities)
+            {
+                Targets = targetEntities.Random(numberOfEntities).ToList<Entity>();
+            }
+            else
+            {
+                Targets = targetEntities.Random(targetEntities.Count - 1).ToList<Entity>();
+            }
         }
         else
         {
@@ -28,7 +35,25 @@ public class IgnitedTargets : TargetPreferenceV2
                     targetEntities.Add(entity);
                 }
             }
-            Targets = targetEntities.Random(numberOfEntities).ToList<Entity>();
+            if (targetEntities.Count - 1 >= numberOfEntities)
+            {
+                Targets = targetEntities.Random(numberOfEntities).ToList<Entity>();
+            }
+            else
+            {
+                Targets = targetEntities.Random(targetEntities.Count - 1).ToList<Entity>();
+            }
+        }
+        if (Targets == null || Targets.Count == 0)
+        {
+            if (originEntity is Character)
+            {
+                Targets = GameManager.Instance.Enemies.Random(numberOfEntities).ToList<Entity>();
+            }
+            else
+            {
+                Targets = GameManager.Instance.Characters.Random(numberOfEntities).ToList<Entity>();
+            }
         }
     }
 }

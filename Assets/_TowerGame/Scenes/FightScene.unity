@@ -1174,7 +1174,7 @@ MonoBehaviour:
   _physicalDefense: 200
   _magicalDefense: 200
   _speed: 100
-  _proActivePointMax: 0
+  _proActivePointMax: 5
   CurrentHealPoint: 0
   CurrentPhysicalAttack: 0
   CurrentMagicalAttack: 0
@@ -1810,7 +1810,7 @@ MonoBehaviour:
   _physicalDefense: 200
   _magicalDefense: 200
   _speed: 130
-  _proActivePointMax: 0
+  _proActivePointMax: 5
   CurrentHealPoint: 0
   CurrentPhysicalAttack: 0
   CurrentMagicalAttack: 0
@@ -2318,7 +2318,7 @@ MonoBehaviour:
   _physicalDefense: 200
   _magicalDefense: 200
   _speed: 120
-  _proActivePointMax: 0
+  _proActivePointMax: 5
   CurrentHealPoint: 0
   CurrentPhysicalAttack: 0
   CurrentMagicalAttack: 0
@@ -2678,7 +2678,7 @@ MonoBehaviour:
   _physicalDefense: 200
   _magicalDefense: 200
   _speed: 125
-  _proActivePointMax: 0
+  _proActivePointMax: 5
   CurrentHealPoint: 0
   CurrentPhysicalAttack: 0
   CurrentMagicalAttack: 0
@@ -3059,7 +3059,7 @@ MonoBehaviour:
   _physicalDefense: 200
   _magicalDefense: 200
   _speed: 90
-  _proActivePointMax: 0
+  _proActivePointMax: 5
   CurrentHealPoint: 0
   CurrentPhysicalAttack: 0
   CurrentMagicalAttack: 0
@@ -3533,7 +3533,7 @@ MonoBehaviour:
   _physicalDefense: 200
   _magicalDefense: 200
   _speed: 150
-  _proActivePointMax: 0
+  _proActivePointMax: 5
   CurrentHealPoint: 0
   CurrentPhysicalAttack: 0
   CurrentMagicalAttack: 0

@@ -12,4 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a25f04a03d74962449b78d7730a2381e, type: 3}
   m_Name: RandomV2
   m_EditorClassIdentifier: 
-  Targets: []
+  Targets:
+  - {fileID: 0}

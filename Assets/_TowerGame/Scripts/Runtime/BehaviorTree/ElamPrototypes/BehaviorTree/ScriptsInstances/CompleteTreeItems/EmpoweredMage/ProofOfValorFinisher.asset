@@ -17,4 +17,4 @@ MonoBehaviour:
   - {fileID: 11400000, guid: d4130b7ecffdbb04db0687ee01234ea8, type: 2}
   abilityData: {fileID: 11400000, guid: 017637b1b8bc3e94bbfb7816909ca51e, type: 2}
   Modifier: {fileID: 11400000, guid: cb26705b638e9214ba8a3ec4abe4eccf, type: 2}
-  IsActive: 1
+  IsActive: 0

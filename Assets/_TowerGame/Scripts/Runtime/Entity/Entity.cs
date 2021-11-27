@@ -93,9 +93,10 @@ public abstract class Entity : MonoBehaviour
         //Debug.Log($"{name} Receive damage from {from}");
         int entityDefense = type == AbilityType.Physic ? CurrentPhysicalDefense : CurrentMagicalDefense;
         CurrentHealPoint = CurrentHealPoint - damage * (entityDefense/10) < 0 ? 0 : CurrentHealPoint - damage * (entityDefense/10);
-        if (CurrentHealPoint == 0)
+        if (CurrentHealPoint <= 0)
         {
             _alive = false;
+            StopAllCoroutines();
             gameObject.SetActive(false);
         }
     }
@@ -107,9 +108,10 @@ public abstract class Entity : MonoBehaviour
         int damage = Mathf.RoundToInt(_damage);
         int entityDefense = type == AbilityType.Physic ? CurrentPhysicalDefense : CurrentMagicalDefense;
         CurrentHealPoint = CurrentHealPoint - damage * (entityDefense / 10) < 0 ? 0 : CurrentHealPoint - damage * (entityDefense / 10);
-        if (CurrentHealPoint == 0)
+        if (CurrentHealPoint <= 0)
         {
             _alive = false;
+            StopAllCoroutines();
             gameObject.SetActive(false);
         }
     }
@@ -135,14 +137,14 @@ public abstract class Entity : MonoBehaviour
 
     public IEnumerator Loop()
     {
-        while (true)
+        while (_alive)
         {
             if (ProActivePoint < _proActivePointMax)
             {
                 yield return ProActivePointBehaviour.Run();
             }
 
-            while (ProActivePoint > 0)
+            if (ProActivePoint > 0)
             {
                 Debug.Log(gameObject.name);
                 BehaviorTreeItemV2 behaviorTreeItem = BehaviorTree.GetTreeItem(this);
