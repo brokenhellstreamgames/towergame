@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f3606bd7f9b06b43a478ea2034e750e, type: 3}
+  m_Name: IgnitedTargetFinisher
+  m_EditorClassIdentifier: 
+  Conditions:
+  - {fileID: 11400000, guid: d4130b7ecffdbb04db0687ee01234ea8, type: 2}
+  - {fileID: 11400000, guid: 103dea4e72fc4444d9b01bac7951a71a, type: 2}
+  abilityData: {fileID: 11400000, guid: 07e688f0511562142be48caa1a0c0d98, type: 2}
+  Modifier: {fileID: 11400000, guid: cb26705b638e9214ba8a3ec4abe4eccf, type: 2}
+  IsActive: 1

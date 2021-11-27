@@ -12,8 +12,8 @@ public abstract class TargetPreference
         Entity = entity;
     }
 
-    public abstract void ComputeEntities(int  numberOfEntities);
-    
+    public abstract void ComputeEntities(int numberOfEntities);
+
     public List<Entity> GetEntities()
     {
         if (Targets == null || Targets.Count == 0)
@@ -22,4 +22,5 @@ public abstract class TargetPreference
         }
         return Targets;
     }
+
 }

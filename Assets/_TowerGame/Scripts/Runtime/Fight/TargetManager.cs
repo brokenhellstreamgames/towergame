@@ -5,7 +5,8 @@ using UnityEngine;
 
 public class TargetManager : MonoBehaviour
 {
-    
+    public Transform ShootPosition;
+
     public List<LineRenderer> Lines;
     
     // Start is called before the first frame update
@@ -23,6 +24,11 @@ public class TargetManager : MonoBehaviour
             lineRenderer.gameObject.SetActive(false);
             Lines.Add(lineRenderer);
         }
+    }
+
+    public void LookTarget(Entity target)
+    {
+        ShootPosition.LookAt(target.transform);
     }
 
     public void Launch(List<Entity> targets)

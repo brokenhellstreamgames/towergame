@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c38b1e4fed08bd3429876031c2282ba1, type: 3}
+  m_Name: ProofOfValor
+  m_EditorClassIdentifier: 
+  vfxPrefab: {fileID: 1066843573042574, guid: c98ce42aa8b5fb64fa955a3b0924a0e6, type: 3}
+  TargetPreference: {fileID: 11400000, guid: e804c3189cb5c904fba32d2c795c581a, type: 2}
+  Name: ProofOfValor
+  NumberOfTargets: 1
+  Cost: 3
+  Type: 0
+  Power: 50
+  powerAdditiveFactor: 50

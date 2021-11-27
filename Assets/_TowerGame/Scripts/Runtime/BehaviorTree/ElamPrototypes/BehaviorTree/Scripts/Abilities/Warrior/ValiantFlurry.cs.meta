@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: a6e46b37daca5264abc5651c31aa270a
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - vfxPrefab: {fileID: 1589245581719068, guid: e865b065887ee5742b7282a5ea6554ee,
+      type: 3}
+  - OriginEntity: {instanceID: 0}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

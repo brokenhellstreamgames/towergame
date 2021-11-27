@@ -9,6 +9,7 @@ public class BehaviorTree
     public List<BehaviorTreeItem> items;
 
     private Entity _entity;
+
     public BehaviorTree(Entity entity)
     {
         _entity = entity;
